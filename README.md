@@ -37,6 +37,8 @@ umi config 配置为
   publicPath: '/',  // 文件引用位置，改为相对路径 './' 打包后的资源引用可能出问题（开启dynamicImport后，嵌套路由资源打包为一级资源，但是打包代码中请求该资源的时候多加了一层目录，导致子路由无法获取相关js），原因有待进一步研究
 }
 ```
+![嵌套路由打包问题](./extra-files/umi-bug.png "嵌套路由打包问题")
+
 
 路由为history模式时候，需要处理静态资源请求
 ![项目资源在nginx服务中的表现](./extra-files/umi-prod.png "项目资源在nginx服务中的表现")
