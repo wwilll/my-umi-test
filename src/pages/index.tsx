@@ -1,6 +1,8 @@
 import styles from './index.less';
 import request from 'umi-request';
 
+import Loadable from 'react-loadable';
+
 function fetchTest() {
   console.log((window as any)?.a?.b?.c)
   request
