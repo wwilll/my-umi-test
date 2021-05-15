@@ -1,7 +1,7 @@
 import { defineConfig } from 'umi';
 
 export default defineConfig({
-  base: '/dist/',
+  base: '/',
   publicPath: '/',
   dynamicImport: {},
   chunks: ['vendors', 'umi'],
