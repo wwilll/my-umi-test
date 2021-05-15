@@ -6,16 +6,10 @@ export default defineConfig({
     type: 'none',
     exclude: [],
   },
+  base: '/',
   dynamicImport: {},
-  publicPath: './',
+  publicPath: '/',
   mock: false,
   routes: routes,
   targets: { ie: 9 },
-  proxy: {
-    '/api': {
-      target: 'http://www.baidu.com/',
-      changeOrigin: true,
-      pathRewrite: { '^/api': '' },
-    },
-  },
 });

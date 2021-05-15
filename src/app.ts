@@ -3,7 +3,7 @@ let extraRoutes;
 export function patchRoutes({ routes }: { routes: any }) {
   // merge(routes, extraRoutes);
   // 直接修改routes
-  console.log(routes);
+  // console.log(routes);
 }
 
 export function render(oldRender: Function) {

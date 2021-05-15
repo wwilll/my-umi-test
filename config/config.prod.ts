@@ -2,6 +2,8 @@ import { defineConfig } from 'umi';
 
 export default defineConfig({
   base: '/dist/',
+  publicPath: '/',
+  dynamicImport: {},
   chunks: ['vendors', 'umi'],
   chainWebpack: function (config, { webpack }) {
     config.optimization.splitChunks({

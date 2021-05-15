@@ -1,6 +1,12 @@
 import { defineConfig } from 'umi';
 
 export default defineConfig({
-  base: '/',
   mock: {},
+  proxy: {
+    '/api': {
+      target: 'http://www.baidu.com/',
+      changeOrigin: true,
+      pathRewrite: { '^/api': '' },
+    },
+  },
 });

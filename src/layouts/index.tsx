@@ -1,13 +1,39 @@
-import { IRouteComponentProps, Link } from 'umi'
+import { IRouteComponentProps, Link } from 'umi';
+import styles from './index.less';
 
-export default function Layout({ children, location, route, history, match }: IRouteComponentProps) {
-  return <>
-    <div>
-      <Link to='/index'>index</Link>
-      <Link style={{marginLeft: 100}} to='/home'>home</Link>
-      <Link style={{marginLeft: 100}} to='/testpage'>testpage</Link>
-      <Link style={{marginLeft: 100}} to='/testpage2'>testpage</Link>
-    </div>
-    {children}
+const linkList = [
+  { to: '/index', label: 'Index' },
+  { to: '/home', label: 'home' },
+  { to: '/settings', label: 'settings' },
+  { to: '/settings/userinfo', label: 'userinfo' },
+  { to: '/settings/testpage', label: 'testpage' },
+  { to: '/login', label: 'login' },
+];
+
+export default function Layout({
+  children,
+  location,
+  route,
+  history,
+  match,
+}: IRouteComponentProps) {
+  // console.log(location);
+  return (
+    <>
+      <div className={styles.tabWrapper}>
+        {linkList.map((link) => (
+          <Link
+            to={link.to}
+            key={link.to}
+            className={`${styles.tab} ${
+              location.pathname === link.to ? styles.select : ''
+            }`}
+          >
+            {link.label}
+          </Link>
+        ))}
+      </div>
+      {children}
     </>
+  );
 }
