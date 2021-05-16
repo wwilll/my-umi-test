@@ -12,4 +12,5 @@ export default defineConfig({
   mock: false,
   routes: routes,
   targets: { ie: 9 },
+  antd: {},
 });

@@ -1,0 +1,22 @@
+.menuOpt {
+  position: relative;
+  & > ul {
+    position: absolute;
+    left: 100%;
+    top: 0;
+  }
+  // &:hover {
+  //   & > ul {
+  //     display: block;
+  //   }
+  // }
+  :global(.ant-menu-submenu-arrow) {
+    transform: translateY(0) rotate(-90deg) !important;
+  }
+  :global(.ant-menu-submenu-arrow::before) {
+    transform: rotate(-45deg) translateX(2.5px) !important;
+  }
+  :global(.ant-menu-submenu-arrow::after) {
+    transform: rotate(45deg) translateX(-2.5px) !important;
+  }
+}

@@ -1,3 +1,5 @@
+import './global/global.less';
+
 let extraRoutes;
 
 export function patchRoutes({ routes }: { routes: any }) {

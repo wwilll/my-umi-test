@@ -1,0 +1,76 @@
+.commonLi {
+  cursor: pointer;
+  &:hover {
+    background-color: rgb(43, 94, 94);
+  }
+  &.select {
+    background-color: pink;
+  }
+}
+.commonLayer {
+  padding: 20px 0 20px 20px;
+  display: flex;
+  .icon {
+    flex: 0 0 20px;
+  }
+  .name {
+    flex: 1;
+  }
+  .arrow {
+    flex: 0 0 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+.menuWrapper {
+  height: 100%;
+  overflow: auto;
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    .layer1 {
+      .commonLayer();
+    }
+    .layer2 {
+      .commonLayer();
+      padding: 20px 20px 20px 40px;
+    }
+    // &.level1 {
+    //   padding: 0;
+    //   & > li {
+    //     padding: 20px 0 20px 20px;
+    //   }
+    // }
+    &.level2 {
+      height: 0;
+      overflow: hidden;
+      transition: height 0.2s;
+      background: #fafafa;
+    }
+  }
+}
+
+ul.level3 {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  li {
+    .commonLi();
+    padding: 20px;
+  }
+}
+
+.popover {
+  padding-left: 0;
+  :global(.ant-popover-content .ant-popover-arrow) {
+    display: none;
+  }
+  :global(.ant-popover-content .ant-popover-inner) {
+    box-shadow: none;
+  }
+  :global(.ant-popover-content .ant-popover-inner-content) {
+    padding: 0;
+  }
+}
